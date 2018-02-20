@@ -1,0 +1,16 @@
+{
+    "contents" : "setwd(\"/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3\")\nshinyapps::setAccountInfo(name='landpotential',\ntoken='DBBF5AC53C9853F86BDF353EA1A7D8EF',\nsecret='SJgN2wINaZ0qQkC/gLaoH7wqoYns1nSkPDSM8ooL')\nshinyapps::deployApp()\nrsconnect::configureApp(\"DataPortal_ExportLandPKS_V3\", size=\"small\")\nshiny::runApp()\n",
+    "created" : 1450318433007.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4127961698",
+    "id" : "D3751CFF",
+    "lastKnownWriteTime" : 1450318126,
+    "path" : "/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3/.Rhistory",
+    "project_path" : ".Rhistory",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_history"
+}

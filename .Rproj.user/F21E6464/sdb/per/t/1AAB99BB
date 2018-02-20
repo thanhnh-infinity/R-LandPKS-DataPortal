@@ -1,0 +1,16 @@
+{
+    "contents" : "## Author: Nasim Gh. \n## email: n-ghazan@nmsu.edu\n\nlibrary(shiny)\nsource('helpers.R')\n\n\nshinyUI(fluidPage(\n  h3(\"Request Data Export\"),\n  \n  \n  \n  conditionalPanel(\n    condition = \"input.exportAll == false\",\n    textInput(\"recorder\", label = \"Enter your recorder name :\")\n  ),\n\n   \n  checkboxInput(\"exportAll\", label = h6(\"Export ALL plots in the database (download may take several minutes)\"), value = FALSE),\n  selectInput(\"dataType\", label = h5(\"Type of Data Export\"), \n              choices = list(\"LandInfo\" , \"LandCover\" , \"Metadata for LandInfo\" , \"Metadata for LandCover\" ), \n              selected = \"LandInfo\"),\n\n  fluidRow(\n    column(width = 1,\n  downloadButton(\"downloadData\", \"Export\")\n    )\n  ,\n  column(width = 1,\n  conditionalPanel(condition = \"input.dataType == 'LandCover'\",\n#   actionButton('visualize',\"Data Visualization\")),\n  tags$body(uiOutput('url')) \n  )\n  ))\n))\n\n",
+    "created" : 1450317860990.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1871168768",
+    "id" : "1AAB99BB",
+    "lastKnownWriteTime" : 1450225169,
+    "path" : "/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "#This file contains client_key and secret and should not be uploaded to a public repository\nmyKey = \"410858290704-pjirleeo4m55hme1ammq00fsbeb8nk33.apps.googleusercontent.com\"\nmySecret = \"V75kZtpAn-AEUnY0BZs6TFBN\"\n",
+    "created" : 1450318435120.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2650260235",
+    "id" : "5C9ADD55",
+    "lastKnownWriteTime" : 1449092369,
+    "path" : "/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3/Auth.R",
+    "project_path" : "Auth.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

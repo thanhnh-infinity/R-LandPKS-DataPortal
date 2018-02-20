@@ -1,0 +1,16 @@
+{
+    "contents" : "## Author: Nasim Gh. \n## email: n-ghazan@nmsu.edu\n\n# server.R\nsource('helpers.R')\nlibrary(googleVis)\n\nshinyServer(function(input, output,session) {\n  \n  output$url<- renderUI({\n    \n    link =paste0(\"https://landpotential.shinyapps.io/LandCoverCharts/?userName=\",selectedRecorder())  \n    a(\"Data Visualization\", class = \"btn btn-primary btn-md\", href = link,\n      target=\"_blank\",\n      style = \"background-color:white ; color: black; border-color: #CDCDCD\")\n  })\n      \n\n  output$downloadData <- downloadHandler(  \n    filename = function(){\n      if(input$dataType == \"LandInfo\"){\n              'Export_LandInfo_Data.csv' \n            }\n            else if(input$dataType == \"LandCover\")\n            {\n              'Export_LandCover_Data.csv' \n            }\n            else if(input$dataType == \"Metadata for LandInfo\" )\n            {\n              'Export_METADATA_LandInfo.csv'\n            }\n            else if(input$dataType == \"Metadata for LandCover\" )\n            {\n              'Export_METADATA_LandCover.csv'\n            }\n            else\n              \"dummy.csv\"\n        \n    },\n    content = function(file) { \n      req_data <- updateRequestedData(selectedRecorder(),isolate(input$dataType))\n      if(is.null(req_data) || nrow(req_data) == 0 ){\n        stop(\"No data to display!\")\n      }\n      req_data$recName <- NULL\n      write.csv(req_data, file,row.names=FALSE,quote=TRUE,na=\"\",qmethod='escape')\n    }\n  )\n  \n  isValidEmail <- function(x) {\n    result = grepl(\"\\\\<[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,}\\\\>\", as.character(x), ignore.case=TRUE)\n    return (result)\n  }\n  \n   \n\nselectedRecorder <- reactive({   \n     rec <-\"\"   \n    if(input$exportAll)\n    {\n      rec = \"all\"\n    }\n    else\n    {\n      shiny::validate(need(input$recorder!= \"\", 'Please enter an email address!' ))\n      shiny::validate(need(isValidEmail(input$recorder), 'Please enter a valid email address!' ))     \n      rec <- input$recorder \n    } \n    rec  \n  })\n})\n\n",
+    "created" : 1450317859017.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4058444826",
+    "id" : "50554D69",
+    "lastKnownWriteTime" : 1449092252,
+    "path" : "/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

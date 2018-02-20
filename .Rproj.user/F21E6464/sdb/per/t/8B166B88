@@ -1,0 +1,16 @@
+{
+    "contents" : "setwd(\"/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3\")\n\nclient.id <- \"410858290704-pjirleeo4m55hme1ammq00fsbeb8nk33.apps.googleusercontent.com\"\nclient.secret <- \"V75kZtpAn-AEUnY0BZs6TFBN\"\n\ntoken <- Auth(client.id,client.secret)\n\n\n\n#devtools::install_github('rstudio/rsconnect')\n#library(rsconnect)\n#devtools::install_github('rstudio/shinyapps')\n#require('shinyapps')\n#library('shinyapps')\nshinyapps::setAccountInfo(name='landpotential',\n                          token='DBBF5AC53C9853F86BDF353EA1A7D8EF',\n                          secret='SJgN2wINaZ0qQkC/gLaoH7wqoYns1nSkPDSM8ooL')\n#devtools::install_github('rstudio/packrat')\nshinyapps::deployApp()\n",
+    "created" : 1450317814172.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3379945048",
+    "id" : "8B166B88",
+    "lastKnownWriteTime" : 1450317817,
+    "path" : "/Volumes/Develop_Data_MacOS/All_Workspace/R_Workspace/DataPortal_ExportLandPKS_V3/deploy.R",
+    "project_path" : "deploy.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
